@@ -1,0 +1,18 @@
+Assignment Mono File Service
+
+* Create FileService
+
+    - read file & return content
+    - create file & write content
+    - delete file
+
+* Assumptions
+
+    - Assume files are very small in size (no OOM)
+    - Files are present under src/main/resource/assignment/sec01Mono
+
+* Expectations
+
+    - File service methods should do any work only when subscribers subscribe to that
+    - Communicate the error to the subscriber in case of issues
+    - Just use whatever we have learnt so far + any utility classes. No need for any special library.
