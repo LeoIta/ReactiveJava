@@ -1,0 +1,12 @@
+Assignment Flux Stock Price Observer
+
+* Create a Flux to check the trend of the stock
+
+* Assumptions
+
+    - starting price 100$
+    - price can increase / decrease of a rate between -10 and 10 every second
+
+* Expectations
+
+    - Subscription should stop when price is over 130 $ or below 70 $

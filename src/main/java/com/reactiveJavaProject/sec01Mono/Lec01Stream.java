@@ -1,4 +1,4 @@
-package com.reactproject.sec01Mono;
+package com.reactiveJavaProject.sec01Mono;
 
 import java.util.stream.Stream;
 

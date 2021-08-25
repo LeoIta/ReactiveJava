@@ -1,4 +1,4 @@
-package com.reactproject.sec01Mono.assignment;
+package com.reactiveJavaProject.sec01Mono.assignment;
 
 import reactor.core.publisher.Mono;
 

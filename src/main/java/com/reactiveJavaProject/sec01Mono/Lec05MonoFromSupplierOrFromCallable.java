@@ -1,6 +1,6 @@
-package com.reactproject.sec01Mono;
+package com.reactiveJavaProject.sec01Mono;
 
-import com.reactproject.corseUtil.Util;
+import com.reactiveJavaProject.courseUtil.Util;
 import reactor.core.publisher.Mono;
 
 import java.util.concurrent.Callable;
