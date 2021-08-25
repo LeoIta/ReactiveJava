@@ -1,0 +1,12 @@
+Assignment Flux File Reader Service
+
+* Create a Flux to have a file reader line by line until the selected line
+
+* Assumptions
+
+    - you should use Flux.create() or Flux.generate()
+    - should be possible to stop the reader when reach a requested line
+
+* Expectations
+
+    - I can decide how many lines I want to read from a selected file.
