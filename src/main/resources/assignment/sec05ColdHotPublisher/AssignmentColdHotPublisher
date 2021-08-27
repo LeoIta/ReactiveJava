@@ -1,0 +1,12 @@
+Assignment Cold/Hot Publisher
+
+* Create a Flux to manage the purchase order
+
+* Assumptions
+
+    - you should have InventoryService, OrderService, PurchaseOrder, RevenueService
+
+
+* Expectations
+
+    - should be possible to check every period of time the revenue and stock
