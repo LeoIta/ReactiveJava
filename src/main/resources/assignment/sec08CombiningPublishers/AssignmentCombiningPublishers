@@ -1,6 +1,6 @@
 Assignment Combining Publishers
 
-* Create a Flux to manage the purchase order
+* Create a Flux to check a car price trend
 
 * Assumptions
 
@@ -8,9 +8,10 @@ Assignment Combining Publishers
     - car price decrease every month of 100$
     every month (price-100)
     - every quarter there is a demand rate between (0.8 - 1.2)
-    price * (demand rate)
+    that will be valid till the next quarter so we'll have every month
+    (price-100$) * (last demand rate)
 
 
 * Expectations
 
-    - we should check the trend of the car value
+    - we should be able to check the car price trend monthly

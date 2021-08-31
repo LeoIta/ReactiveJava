@@ -1,12 +1,14 @@
 Assignment Cold/Hot Publisher
 
-* Create a Flux to manage the purchase order
+* Create a Flux to check revenue for specific categories purchase
 
 * Assumptions
 
-    - you should have InventoryService, OrderService, PurchaseOrder, RevenueService
-
+    - product should have name , quantity , price, category
+    - the flux should drop the item that have not one of the allowed categories
+    - if the item has one of the allowed category should calculate the revenue and update the quantity
+    - you can consider allowed categories 'Kids' and 'Automotive'.
 
 * Expectations
 
-    - should be possible to check every period of time the revenue and stock
+    - should be possible to check every period of time the revenue and stock of allowed categories

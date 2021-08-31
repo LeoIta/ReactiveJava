@@ -1,0 +1,17 @@
+Assignment GroupBy
+
+* Create a Flux to manage the purchase order and apply offer based on the category
+
+* Assumptions
+
+    - product should have name, price, category
+    - the fluxA should emit random product
+    - we consider allowed categories 'Kids' and 'Automotive'.
+    - the fluxB based on the category should take different action:
+        1. if category is not allowed, then drop the item
+        2. if category is Kids then apply 50% discount on the price and add a random item for free
+        3. if the category is Automotive, then add 10% tax on the price
+
+* Expectations
+
+    - should be possible to check the revenue for the allowed categories

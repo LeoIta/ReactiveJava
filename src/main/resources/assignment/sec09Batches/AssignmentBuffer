@@ -1,0 +1,12 @@
+Assignment Buffer
+
+* Create a Flux to manage the purchase order of books
+
+* Assumptions
+
+    - allowed categories are: "Science fiction", "Fantasy", "Suspense/Thriller"
+    - flux every 5 second should calculate the revenue for the allowed categories book
+
+* Expectations
+
+    - it is possible that we do not receive any result if no items have been sold for those allowed categories
