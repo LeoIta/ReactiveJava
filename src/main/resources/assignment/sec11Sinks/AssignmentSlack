@@ -1,0 +1,14 @@
+Assignment Slack
+
+* Simulated a Slack room chat
+
+* Assumptions
+
+    - we can have one or more Slack Member
+    - we can have one or more Slack Room
+    - each user can write 1 or more messages
+    - you can use Sinks.Many() or Sink.One()
+
+* Expectations
+
+    - should be possible to have a chat between existing room members and new ones
