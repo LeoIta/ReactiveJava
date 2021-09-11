@@ -17,7 +17,7 @@ public class Lec01FluxJust {
         );
 
         // many elements
-        Flux<Integer> flux = Flux.just(1,2,3,4,5);
+        Flux<Integer> flux = Flux.just(1, 2, 3, 4, 5);
 
         flux.subscribe(
                 Util.onNext(),

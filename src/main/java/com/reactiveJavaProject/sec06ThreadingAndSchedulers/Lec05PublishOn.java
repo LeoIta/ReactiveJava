@@ -17,8 +17,11 @@ public class Lec05PublishOn {
         })
                 .doOnNext(i -> printThreadName("next " + i));
 
-        /*the consumer will use boundedElastic for one operation
-         and parallel for others but the producer will use the main one*/
+        /*
+        the consumer will use boundedElastic for one operation
+         and parallel for others but the producer will use the main one
+         */
+
         flux
                 .publishOn(Schedulers.boundedElastic())
                 .doOnNext(i -> printThreadName("next " + i))

@@ -17,7 +17,8 @@ public class RevenueService {
     }
 
     public Consumer<PurchaseOrder> subscribeOrderStream() {
-        return p -> db.computeIfPresent(p.getCategory(), (k, v) -> v + p.getPrice()*p.getQuantity());
+        return p -> db.computeIfPresent(p.getCategory(),
+                (k, v) -> v + p.getPrice() * p.getQuantity());
     }
 
     public Flux<String> revenueStream() {

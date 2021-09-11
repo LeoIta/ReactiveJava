@@ -24,12 +24,12 @@ public class Lec02SinkOneTry {
         sink3.tryEmitError(new RuntimeException("new error"));
 
         /* results are:
-        SinkValue - Received : any value
-        Completed                               we return a value and then mono.completed
+         SinkValue - Received : any value
+         Completed                               we return a value and then mono.completed
 
-        Completed                               no value, only mono.completed
+         Completed                               no value, only mono.completed
 
-        SinkError - ERROR : new error           we throw an error and then we have not mono.completed
+         SinkError - ERROR : new error           we throw an error and then we have not mono.completed
         */
     }
 }

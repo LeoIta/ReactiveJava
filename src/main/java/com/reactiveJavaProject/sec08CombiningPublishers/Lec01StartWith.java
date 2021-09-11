@@ -7,7 +7,7 @@ public class Lec01StartWith {
 
     public static void main(String[] args) {
 
-        /* it will generate a new name only if there no one that match the
+        /* it will generate a new name only if there is no one that match the
          requirement in the cache db*/
         NameGenerator generator = new NameGenerator();
         generator.generateNames()

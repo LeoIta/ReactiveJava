@@ -12,7 +12,7 @@ public class SlackMessage {
     private String message;
 
     @Override
-    public String toString(){
+    public String toString() {
         return String.format(FORMAT, this.sender, this.receiver, this.message);
     }
 }

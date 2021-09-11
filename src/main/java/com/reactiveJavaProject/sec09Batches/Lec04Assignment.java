@@ -26,13 +26,12 @@ public class Lec04Assignment {
                 .map(list -> revenueCalculator(list))
                 .subscribe(Util.subscriber("Revenue"));
 
-
         Util.sleepSeconds(10);
 
     }
 
     private static Map<String, Double> revenueCalculator(List<BookOrder> books) {
-         return books.stream()
+        return books.stream()
                 .collect(Collectors.groupingBy(
                         BookOrder::getCategory,
                         Collectors.summingDouble(BookOrder::getPrice)

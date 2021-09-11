@@ -10,9 +10,11 @@ public class Lec09FluxInterval {
 
     public static void main(String[] args) {
 
+        /*
+        flux interval has for default parallel Schedules
+         and you cannot change with subscribeOn()
+        */
 
-        /* flux interval has for default parallel Schedules
-         and you cannot change with subscribeOn()*/
         Flux.interval(Duration.ofSeconds(1))
                 .subscribeOn(Schedulers.boundedElastic())
                 .log()

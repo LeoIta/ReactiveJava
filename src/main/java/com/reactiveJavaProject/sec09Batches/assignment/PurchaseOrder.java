@@ -15,7 +15,8 @@ public class PurchaseOrder {
     /*it will generate a random item when called*/
     public PurchaseOrder() {
         this.itemName = Util.faker().commerce().productName();
-        this.price = Double.parseDouble(Util.faker().commerce().price().replace(",", "."));
+        this.price = Double.parseDouble(Util.faker().commerce().price()
+                .replace(",", "."));
         this.category = Util.faker().commerce().department();
     }
 

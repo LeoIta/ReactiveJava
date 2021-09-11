@@ -6,7 +6,7 @@ import reactor.core.publisher.Flux;
 public class Lec04FluxCreateIssueFix {
 
     public static void main(String[] args) {
-        // create allow you to use only one instance of fluxSink
+        // .create allows you to use only one instance of fluxSink
         Flux.create(fluxSink -> {
             String country;
             do {

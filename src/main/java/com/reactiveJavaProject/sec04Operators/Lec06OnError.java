@@ -17,7 +17,7 @@ public class Lec06OnError {
 //                .onErrorResume(e -> fallback()
 //      .onErrorContinue((err, obj) in case of error doesn't cancel the subscription and execute the block before the next
                 .onErrorContinue((err, obj) ->
-                    System.out.println("error : \n" + err + "\nvalue that create error : \n" + obj.toString())
+                        System.out.println("error : \n" + err + "\nvalue that create error : \n" + obj.toString())
                 )
                 .subscribe(Util.subscriber());
 

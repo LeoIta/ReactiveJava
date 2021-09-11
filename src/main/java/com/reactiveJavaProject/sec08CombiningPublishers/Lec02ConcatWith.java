@@ -11,8 +11,8 @@ public class Lec02ConcatWith {
         Flux<String> flux3 = Flux.just("c", "d", "e");
 
         /*
-        flux1.concatWith(flux2) allow you to concat one publisher for time
-        Flux.concat(fluxA, flux3) allow you to concat more than 1 publisher for time
+        flux1.concatWith(flux2) allows you to concatenate one publisher for time
+        Flux.concat(fluxA, flux3) allows you to concatenate more than 1 publisher for time
         */
         Flux<String> fluxA = flux1.concatWith(flux2);
         Flux<String> fluxB = Flux.concat(fluxA, flux3);
@@ -20,8 +20,10 @@ public class Lec02ConcatWith {
         fluxA.subscribe(Util.subscriber("flux A"));
         fluxB.subscribe(Util.subscriber("flux B"));
 
-        /* if there is an error it delay at the end without interrupting
-         the publishing*/
+        /* if there is an error, it delays at the end without interrupting
+         the publishing
+        */
+
         Flux.concatDelayError(fluxA, flux3)
                 .subscribe(Util.subscriber("flux C"));
 

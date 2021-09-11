@@ -13,7 +13,7 @@ public class Lec12FlatMap {
 //                .map(user -> OrderService.getOrders(user.getUserId()))  //flux
                 .flatMap(user -> OrderService.getOrders(user.getUserId()))  // mono / flux
 //                .concatMap(user -> OrderService.getOrders(user.getUserId()))  // mono / flux
-// .concatMap works similar to flatMap but is waiting tht the 1st publisher ends publishing before start the 2nd
+// .concatMap works like flatMap but is waiting that the 1st publisher ends emitting before starting the 2nd
 //                .log()
                 .subscribe(Util.subscriber());
 

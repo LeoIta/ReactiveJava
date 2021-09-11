@@ -11,7 +11,7 @@ public class Lec01FluxCreate {
             do {
                 country = Util.faker().country().name();
                 fluxSink.next(country);
-            } while (!country.toLowerCase().equals("canada"));
+            } while (!country.equalsIgnoreCase("canada"));
             fluxSink.complete();
         })
                 .subscribe(Util.subscriber());

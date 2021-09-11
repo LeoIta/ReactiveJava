@@ -14,15 +14,15 @@ public class Lec03HotPublish {
         Flux<String> movieStream = Flux.fromStream(() -> getMovie())
                 .delayElements(Duration.ofSeconds(2))
                 .publish()
-                .refCount(2); //min subscriber means the min people needed before starting publishing content
+                .refCount(2); //min subscriber means the min people needed before starting emitting content
 
-        //user Sam watching movie in the Cinema
+        //user Sam is watching a movie in the Cinema
         movieStream
                 .subscribe(Util.subscriber("sam"));
 
         Util.sleepSeconds(5);
 
-        //user Mike watching movie in the Cinema
+        //user Mike is watching a movie in the Cinema
         movieStream
                 .subscribe(Util.subscriber("mike"));
 

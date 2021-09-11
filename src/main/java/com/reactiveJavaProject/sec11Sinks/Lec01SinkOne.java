@@ -20,7 +20,7 @@ public class Lec01SinkOne {
         */
 
         // mono1 value / empty / error
-        Sinks.One<Object> sinkOne = Sinks.one(); // it is like Mono, it return only a value
+        Sinks.One<Object> sinkOne = Sinks.one(); // it is like Mono, it emit only a value
 
         Mono<Object> mono = sinkOne.asMono();
         // with sinkOne we drop the value, with mono we'll subscribe

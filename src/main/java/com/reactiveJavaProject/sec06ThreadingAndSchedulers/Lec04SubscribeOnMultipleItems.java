@@ -18,8 +18,11 @@ public class Lec04SubscribeOnMultipleItems {
         })
                 .doOnNext(i -> printThreadName("next " + i));
 
-        /*if the programmer doesn't define the Schedulers when is coding the publisher,
-         it will be one thread pool for each subscription*/
+        /*
+        if the programmer doesn't define the Schedulers when is coding the publisher,
+        it will be one thread pool for each subscription
+        */
+
         flux.subscribeOn(Schedulers.boundedElastic())
                 .subscribe(v -> printThreadName("sub " + v));
 

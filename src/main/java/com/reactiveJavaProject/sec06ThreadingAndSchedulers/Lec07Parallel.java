@@ -8,12 +8,14 @@ public class Lec07Parallel {
 
     public static void main(String[] args) {
 
-        /*even if we have a single publisher and a single subscriber
-        we use different threads*/
+        /*
+        even if we have a single publisher and a single subscriber
+        we use different threads
+        */
         Flux.range(1, 10)
                 .parallel(10)
 //                .parallel()
-        //  without any value let the system decide how many threads
+                //  without any value let the system decide how many threads
                 .runOn(Schedulers.parallel())
                 .doOnNext(i -> printThreadName("next " + i))
                 .sequential()

@@ -12,7 +12,7 @@ public class Lec08FluxInterval {
         Flux.interval(Duration.ofSeconds(1))
                 .subscribe(Util.onNext());
 
-// in order to see the result of the Flux.interval that release a vlaue every second we should add a delay in the code
+// in order to see the result of the Flux.interval that release an item every second we should add a delay in the code
 
         Util.sleepSeconds(6); //in this way we should have 6 output
 

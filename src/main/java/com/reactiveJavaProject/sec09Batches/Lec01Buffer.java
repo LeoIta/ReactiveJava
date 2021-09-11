@@ -11,15 +11,17 @@ public class Lec01Buffer {
 
         //Batching With Buffer
         eventStream()
-                .buffer(10) //it groups 10 values in a list and consume them together
+                .buffer(10) //it groups 10 items in a list and consumes them together
                 .subscribe(Util.subscriber("eventStream"));
 
 
         //Batching With Buffer - When Complete Signal Is Emitted
         eventStreamEmit3()
                 .buffer(10)
-    /*it groups 10 values in a list and consume them together, if the producer emits less than 10,
-                it will take the emitted ones, in this case just 3*/
+                /*
+                it groups 10 items in a list and consumes them together, if the producer emits less than 10,
+                it will take the emitted ones; in this case just 3
+                */
                 .subscribe(Util.subscriber("eventStreamEmit3"));
 
         Util.sleepSeconds(10);

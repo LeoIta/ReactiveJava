@@ -20,7 +20,8 @@ public class NameGenerator {
             stringSynchronousSink.next(name);
         })
                 .cast(String.class)
-                .startWith(getFromCache()); //it will first check if there are value in the cache that met the requirements
+                .startWith(getFromCache());
+        //it will first check if there are values in the cache that met the requirements
     }
 
     private Flux<String> getFromCache() {

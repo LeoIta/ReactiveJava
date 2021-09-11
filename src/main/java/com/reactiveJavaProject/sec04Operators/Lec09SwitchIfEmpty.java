@@ -8,7 +8,7 @@ public class Lec09SwitchIfEmpty {
     public static void main(String[] args) {
 
 
-        //if no value passes the filter, we have empty object then the .switchIfEmpty will call the fallback method
+        //if no item passes the filter, we have empty object then the .switchIfEmpty will call the fallback method
         getOrderNumber()
                 .filter(i -> i > 10)
                 .switchIfEmpty(fallback())
@@ -16,7 +16,7 @@ public class Lec09SwitchIfEmpty {
 
     }
 
-    /* if redis doesn't contain the requested info, thn I switch to the the db to get the info*/
+    /* if redis doesn't contain the requested info, then I switch to the the db to get the info*/
     // redis cache
     private static Flux<Integer> getOrderNumber() {
         return Flux.range(1, 10);

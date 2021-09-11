@@ -19,7 +19,7 @@ public class Lec06HotPublishCache {
 
         System.out.println("Sam is about to join");
         Util.sleepSeconds(2);
-        //user Sam watching movie in the Cinema
+        //user Sam is watching a movie in the Cinema
         movieStream
                 .subscribe(Util.subscriber("sam"));
 
@@ -28,7 +28,7 @@ public class Lec06HotPublishCache {
         System.out.println("Mike is about to join");
 
         // mike is too late and will not be able to watch all scenes but just the remaining ones plus the last 2
-        //user Mike watching movie in the Cinema
+        //user Mike is watching movie in the Cinema
         movieStream
                 .subscribe(Util.subscriber("mike"));
 

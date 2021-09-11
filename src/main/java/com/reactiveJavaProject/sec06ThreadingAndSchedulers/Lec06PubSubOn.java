@@ -17,7 +17,7 @@ public class Lec06PubSubOn {
         })
                 .doOnNext(i -> printThreadName("next " + i));
 
-        /*the consumer will use boundedElastic until it reaches the publishOn*/
+        //the consumer will use boundedElastic until it reaches the publishOn
         flux
                 .publishOn(Schedulers.parallel())
                 .doOnNext(i -> printThreadName("next " + i))

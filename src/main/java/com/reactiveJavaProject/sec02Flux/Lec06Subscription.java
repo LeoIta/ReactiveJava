@@ -14,7 +14,7 @@ public class Lec06Subscription {
         //with atomic reference I create dummy object to hold the subscription
         AtomicReference<Subscription> atomicReference = new AtomicReference<>();
 
-        Flux.range(1,20)
+        Flux.range(1, 20)
                 .log()
                 .subscribeWith(new Subscriber<Integer>() {
                     @Override

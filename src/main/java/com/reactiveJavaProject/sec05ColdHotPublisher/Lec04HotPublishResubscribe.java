@@ -15,16 +15,16 @@ public class Lec04HotPublishResubscribe {
                 .delayElements(Duration.ofSeconds(1))
                 .publish()
                 .refCount(1);
-    /*if the flux reaches the completed status before another user join,
+    /*if the flux reaches the completed status before another user joins,
         even using refCount we'll have behaviour as a cold publish*/
 
-        //user Sam watching movie in the Cinema
+        //user Sam is watching a movie in the Cinema
         movieStream
                 .subscribe(Util.subscriber("sam"));
 
         Util.sleepSeconds(10);
 
-        //user Mike watching movie in the Cinema
+        //user Mike is watching a movie in the Cinema
         movieStream
                 .subscribe(Util.subscriber("mike"));
 

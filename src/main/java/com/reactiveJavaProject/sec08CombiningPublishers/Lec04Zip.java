@@ -7,7 +7,7 @@ public class Lec04Zip {
 
     public static void main(String[] args) {
 
-        /*it will emit same amount of values as the publisher that emits the less */
+        /*it will emit same amount of items as the publisher that emits the less */
         Flux.zip(getBody(), getEngine(), getTires())
                 //to get one of the 3 publishers
                 .doOnNext(tuple -> System.out.println(tuple.getT1()))

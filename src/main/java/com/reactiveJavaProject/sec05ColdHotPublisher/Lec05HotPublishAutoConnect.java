@@ -15,14 +15,14 @@ public class Lec05HotPublishAutoConnect {
                 .publish()
                 .autoConnect(0);
     /* we don't need any subscriber to start
-    if the flux reaches the completed status before another user join,
+    if the flux reaches the completed status before another user joins,
         using .autoConnect() the publisher will not publish data anymore*/
 
         Util.sleepSeconds(3);
         System.out.println("Sam is about to join");
 
         //Sam will watch the movie from scene 4
-        //user Sam watching movie in the Cinema
+        //user Sam is watching a movie in the Cinema
         movieStream
                 .subscribe(Util.subscriber("sam"));
 
@@ -30,8 +30,8 @@ public class Lec05HotPublishAutoConnect {
 
         System.out.println("Mike is about to join");
 
-        // mike is too late and will not be able to watch any scene
-        //user Mike watching movie in the Cinema
+        // mike is too late and he will not be able to watch any scene
+        //user Mike is watching movie in the Cinema
         movieStream
                 .subscribe(Util.subscriber("mike"));
 

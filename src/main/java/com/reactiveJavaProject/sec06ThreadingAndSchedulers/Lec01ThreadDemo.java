@@ -22,7 +22,7 @@ public class Lec01ThreadDemo {
 
     }
 
-    private static void printThreadName(String msg){
+    private static void printThreadName(String msg) {
         System.out.println(msg + "\t\t: Thread : " + Thread.currentThread().getName());
     }
 }

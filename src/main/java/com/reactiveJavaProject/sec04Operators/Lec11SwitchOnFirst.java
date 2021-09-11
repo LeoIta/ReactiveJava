@@ -12,7 +12,7 @@ public class Lec11SwitchOnFirst {
 
         getPerson()
                 .log()
-                //.switchOnFirst accept a BiFunction. based on the first element it eventually change to the applyFilterMap
+                //.switchOnFirst accepts a BiFunction. based on the first element it eventually changes to the applyFilterMap
                 .switchOnFirst((signal, personFlux) -> signal.isOnNext() && signal.get().getAge() > 18 ?
                         personFlux : applyFilterMap().apply(personFlux))
                 .subscribe(Util.subscriber());

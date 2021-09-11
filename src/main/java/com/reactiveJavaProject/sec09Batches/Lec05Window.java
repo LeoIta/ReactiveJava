@@ -11,15 +11,15 @@ public class Lec05Window {
     public static void main(String[] args) {
 
         eventStream()
-                .window(3,4)
+                .window(3, 4)
                 /* it will emit Flux<Flux<String>>*/
-               .flatMap(flux -> saveEvents(flux))
+                .flatMap(flux -> saveEvents(flux))
                 .subscribe(Util.subscriber("windowMaxSize"));
 
-//        eventStream()
-//                .window(Duration.ofSeconds(5))
-//                .flatMap(flux -> saveEvents(flux))
-//                .subscribe(Util.subscriber("windowDuration"));
+        eventStream()
+                .window(Duration.ofSeconds(5))
+                .flatMap(flux -> saveEvents(flux))
+                .subscribe(Util.subscriber("windowDuration"));
 
         Util.sleepSeconds(10);
     }
@@ -31,8 +31,8 @@ public class Lec05Window {
 
     private static Mono<Void> saveEvents(Flux<String> flux) {
         return flux.
-                doOnNext(s-> System.out.println("Received : " + s))
-        .then();
+                doOnNext(s -> System.out.println("Received : " + s))
+                .then();
     }
 
 }

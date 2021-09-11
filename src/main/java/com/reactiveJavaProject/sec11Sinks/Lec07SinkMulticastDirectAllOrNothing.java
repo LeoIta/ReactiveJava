@@ -19,7 +19,8 @@ public class Lec07SinkMulticastDirectAllOrNothing {
         sink.tryEmitNext("submitter");
         flux.subscribe(Util.subscriber("sam"));
         /* multicast().directAllOrNothing() is not caching any item emitted before the first subscriber, so here even sam as first subscriber
-         * if he subscribe after 3 items , he will not get the first 3 items*/
+        if he subscribe after 3 items , he will not get the first 3 items
+        */
         flux.subscribe(Util.subscriber("bob"));
         sink.tryEmitNext("hi");
         flux.subscribe(Util.subscriber("john"));

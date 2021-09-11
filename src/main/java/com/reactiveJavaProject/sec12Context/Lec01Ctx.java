@@ -13,21 +13,21 @@ public class Lec01Ctx {
         System.out.println("****************");
 
         getWelcomeMessage()
-                .contextWrite(Context.of("user","sam"))
+                .contextWrite(Context.of("user", "sam"))
                 .subscribe(Util.subscriber());
         System.out.println("****************");
 
         getWelcomeMessage()
-                .contextWrite(Context.of("user","bob"))
-                .contextWrite(Context.of("user","sam"))
+                .contextWrite(Context.of("user", "bob"))
+                .contextWrite(Context.of("user", "sam"))
                 .subscribe(Util.subscriber());
         // the context is going from the end to the top, the last valid value will be bob
         System.out.println("****************");
 
 
         getWelcomeMessage()
-                .contextWrite(Context.of("users","bob"))
-                .contextWrite(Context.of("user","sam"))
+                .contextWrite(Context.of("users", "bob"))
+                .contextWrite(Context.of("user", "sam"))
                 .subscribe(Util.subscriber());
         // the context is looking for the key user, then we'll have sam
         System.out.println("****************");

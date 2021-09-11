@@ -11,7 +11,7 @@ public class Lec04FluxFromStream {
     public static void main(String[] args) {
 
         //from Stream
-        List<Integer> list = List.of(1,2,3,4,5);
+        List<Integer> list = List.of(1, 2, 3, 4, 5);
         Stream<Integer> stream = list.stream();
 
         //stream can be used only once

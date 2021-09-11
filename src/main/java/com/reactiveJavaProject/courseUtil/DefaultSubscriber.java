@@ -26,7 +26,7 @@ public class DefaultSubscriber implements Subscriber<Object> {
 
     @Override
     public void onError(Throwable err) {
-        System.out.println(name +  "ERROR : " + err.getMessage());
+        System.out.println(name + "ERROR : " + err.getMessage());
     }
 
     @Override

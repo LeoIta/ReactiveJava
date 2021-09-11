@@ -9,8 +9,8 @@ public class Lec02CtxUpdate {
     public static void main(String[] args) {
 
         getWelcomeMessage()
-                .contextWrite(ctx-> ctx.put("user", ctx.get("user").toString().toUpperCase()))
-                .contextWrite(Context.of("user","sam"))
+                .contextWrite(ctx -> ctx.put("user", ctx.get("user").toString().toUpperCase()))
+                .contextWrite(Context.of("user", "sam"))
                 .subscribe(Util.subscriber());
         // in line 12 we update the context on line 12. We take the value and change it to uppercase
         System.out.println("****************");

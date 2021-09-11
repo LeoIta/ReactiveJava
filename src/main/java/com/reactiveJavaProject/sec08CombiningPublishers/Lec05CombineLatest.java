@@ -9,9 +9,11 @@ public class Lec05CombineLatest {
 
     public static void main(String[] args) {
 
-        /* .combineLatest will combine 2 publisher with the BI function defined as 3rd arg
-          When one of the publisher emits a value, it will check the last value emitted by
-          the other publisher to combine the 2 values*/
+        /* .combineLatest will combine 2 publishers with the BI function defined as 3rd arg
+          When one of the publishers emits a value, it will check the last value emitted by
+          the other publisher to combine the 2 values
+        */
+
         Flux.combineLatest(getString(), getNumber(), (s, i) -> s + i)
                 .subscribe(Util.subscriber());
 

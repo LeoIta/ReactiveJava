@@ -24,7 +24,7 @@ public class Lec06SupplierRefactoring {
 
     }
 
-    private static Mono<String> getName(){
+    private static Mono<String> getName() {
         System.out.println("entered getName method");
         return Mono.fromSupplier(() -> {
             System.out.println("Generating name ..");

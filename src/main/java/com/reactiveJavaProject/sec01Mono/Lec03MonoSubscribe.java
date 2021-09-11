@@ -25,7 +25,7 @@ public class Lec03MonoSubscribe {
         //publisher
         Mono<String> monoErr = Mono.just("ball")
                 .map(String::length)
-                .map(l->l.toString().substring(3));
+                .map(l -> l.toString().substring(3));
 
         //3 .subscribe()
 //        monoErr.subscribe(); // it will return an error
@@ -34,16 +34,16 @@ public class Lec03MonoSubscribe {
         //2 subscribe(@Nullable Consumer<? super T> consumer, @Nullable Consumer<? super Throwable> errorConsumer, @Nullable Runnable completeConsumer) {
         monoErr.subscribe(
                 item -> System.out.println("monoErr: " + item),
-                err-> System.out.println("monoErr: " + err.getMessage()),
+                err -> System.out.println("monoErr: " + err.getMessage()),
                 () -> System.out.println("monoErr completed")
         ); //is not returning an error but only the error message
 
         System.out.println("#####################");
         System.out.println("monoErr:");
         monoErr.subscribe(
-            Util.onNext(),
-            Util.onError(),
-            Util.onComplete()
+                Util.onNext(),
+                Util.onError(),
+                Util.onComplete()
         );
     }
 }

@@ -10,9 +10,11 @@ public class Lec07FluxVsList {
     public static void main(String[] args) {
 
         List<String> names = NameGenerator.getNamesList(5);
-        System.out.println(names); // I have to wait 5 second to get the all list printed
+        System.out.println(names);
+        // I have to wait 5 second to get the all list printed
 
         NameGenerator.getNamesFlux(5)
-                .subscribe(Util.onNext()); // I'll have a name every second and all data after 5 sec
+                .subscribe(Util.onNext());
+        // I'll have a name every second and all data after 5 sec
     }
 }

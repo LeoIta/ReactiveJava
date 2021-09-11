@@ -10,19 +10,19 @@ import java.nio.file.Paths;
 public class FileService {
     private static final Path PATH = Paths.get("src/main/resources/assignment/sec01Mono");
 
-    public static Mono<String> read(String fileName){
+    public static Mono<String> read(String fileName) {
         return Mono.fromSupplier(() -> readFile(fileName));
     }
 
-    public static Mono<Void> delete(String fileName){
+    public static Mono<Void> delete(String fileName) {
         return Mono.fromRunnable(() -> deleteFile(fileName));
     }
 
-    public static Mono<Void> write(String fileName, String content){
+    public static Mono<Void> write(String fileName, String content) {
         return Mono.fromRunnable(() -> writeFile(fileName, content));
     }
 
-    private static String readFile(String fileName){
+    private static String readFile(String fileName) {
         try {
             return Files.readString(PATH.resolve(fileName));
         } catch (IOException e) {
@@ -30,7 +30,7 @@ public class FileService {
         }
     }
 
-    private static void deleteFile(String fileName){
+    private static void deleteFile(String fileName) {
         try {
             Files.delete(PATH.resolve(fileName));
         } catch (IOException e) {
@@ -38,11 +38,11 @@ public class FileService {
         }
     }
 
-    private static void writeFile(String fileName, String content){
+    private static void writeFile(String fileName, String content) {
         String pat = PATH.resolve(fileName).toString();
         System.out.println(pat);
         try {
-            Files.writeString(PATH.resolve(fileName),content);
+            Files.writeString(PATH.resolve(fileName), content);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

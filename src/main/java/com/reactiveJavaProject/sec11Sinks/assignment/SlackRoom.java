@@ -15,7 +15,7 @@ public class SlackRoom {
         this.flux = this.sink.asFlux();
     }
 
-    public void joinRoom(SlackMember slackMember){
+    public void joinRoom(SlackMember slackMember) {
         System.out.println(slackMember.getName() + "------------- Joined ---------------" + this.name);
         this.subscribe(slackMember);
         slackMember.setMessageConsumer(
@@ -23,7 +23,7 @@ public class SlackRoom {
         );
     }
 
-    private void subscribe(SlackMember slackMember){
+    private void subscribe(SlackMember slackMember) {
         this.flux
                 .filter(sm -> !sm.getSender().equals(slackMember.getName()))
                 .doOnNext(sm -> sm.setReceiver(slackMember.getName()))
@@ -31,7 +31,7 @@ public class SlackRoom {
                 .subscribe(slackMember::receives);
     }
 
-    private void postMessage(String msg, SlackMember slackMember){
+    private void postMessage(String msg, SlackMember slackMember) {
         SlackMessage slackMessage = new SlackMessage();
         slackMessage.setSender(slackMember.getName());
         slackMessage.setMessage(msg);

@@ -21,16 +21,17 @@ public class Lec07Assignment {
 
         Set<String> set = categoryMap.keySet();
 
-        OrderService.getOrderStream() //start emitting random item to purchase
+        OrderService.getOrderStream() //start emitting random items to purchase
                 .filter(p -> set.contains(p.getCategory())) // filter only the categories defined in the categoryMap
                 .groupBy(PurchaseOrder::getCategory)  // group by 2 keys to get a groupedFlux
                 // Flux<GroupedFlux<String,PurchaseOrder>>
                 .flatMap(gf -> categoryMap.get(gf.key()).apply(gf)) /* get the key and provide the value
                 that in this case will be the flux method to apply that will be Flux<PurchaseOrder>>*/
-                /*N.B we use the flatMap to go inside the flux, with only map I'll get
+                /*
+                N.B we use the flatMap to go inside the flux, with only map I'll get
                 Received : FluxPeekFuseable
                 Received : FluxFlatMap
-               */
+                */
                 .subscribe(Util.subscriber());
 
         Util.sleepSeconds(60);

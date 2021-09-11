@@ -14,13 +14,13 @@ public class Lec01ColdPublisher {
         Flux<String> movieStream = Flux.fromStream(() -> getMovie())
                 .delayElements(Duration.ofSeconds(2));
 
-        //user Sam watching Netflix
+        //user Sam is watching Netflix
         movieStream
                 .subscribe(Util.subscriber("sam"));
 
         Util.sleepSeconds(5);
 
-        //user Mike watching Netflix
+        //user Mike is watching Netflix
         movieStream
                 .subscribe(Util.subscriber("mike"));
 

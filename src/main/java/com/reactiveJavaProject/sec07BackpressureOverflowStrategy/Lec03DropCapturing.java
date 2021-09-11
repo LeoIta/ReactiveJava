@@ -11,7 +11,7 @@ public class Lec03DropCapturing {
 
     public static void main(String[] args) {
 
- /* instead of dropping the value, we can store the "dropped ones in a database, for simplicity we'll use an Array list*/
+        /* instead of dropping the value, we can store the "dropped" ones in a database, for simplicity we'll use an ArrayList*/
 
         List<Object> droppedList = new ArrayList<>();
         System.setProperty("reactor.bufferSize.small", "16");
@@ -33,9 +33,8 @@ public class Lec03DropCapturing {
         Util.sleepSeconds(4);
 
         System.out.println(droppedList);
-        System.out.println(droppedList.size() + " dropped values have been sent to the database" );
+        System.out.println(droppedList.size() + " dropped values have been sent to the database");
 
     }
-
 
 }

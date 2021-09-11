@@ -13,9 +13,9 @@ public class Lec03FluxTake {
         */
 
         //filter will print the first 2 but check all the 5 records
-        Flux.range(1,5)
+        Flux.range(1, 5)
                 .log()
-                .filter(i -> i<3) //keeps checking all the other values
+                .filter(i -> i < 3) //keeps checking all the other values
                 .log()
                 .subscribe(Util.subscriber());
 /*
@@ -38,7 +38,7 @@ Completed
 */
 
         //take will print the first 2 and cancel the subscription
-        Flux.range(1,5)
+        Flux.range(1, 5)
                 .log()
                 .take(2)  //take the first 3 element and cancels the subscription
                 .log()

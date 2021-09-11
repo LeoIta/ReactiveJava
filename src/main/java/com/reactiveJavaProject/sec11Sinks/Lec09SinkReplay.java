@@ -23,10 +23,8 @@ public class Lec09SinkReplay {
         flux.subscribe(Util.subscriber("mike"));
         flux.subscribe(Util.subscriber("jake"));
 
-
         /* using .replay().all() every subscriber will get all the items of the 1st subscriber because the history is replayed
-        * using .replay().all(2) every subscriber will get 2 items of the 1st subscriber*/
+         * using .replay().all(2) every subscriber will get 2 items of the 1st subscriber*/
     }
-
 
 }

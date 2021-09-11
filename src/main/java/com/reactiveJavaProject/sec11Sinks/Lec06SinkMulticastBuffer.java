@@ -18,8 +18,10 @@ public class Lec06SinkMulticastBuffer {
         sink.tryEmitNext("the first");
         sink.tryEmitNext("submitter.");
         flux.subscribe(Util.subscriber("sam"));
-        /* multicast().onBackpressureBuffer() is caching all the items until the first subscriber, so here sam as first subscriber even
-         * if he subscribe after 3 items , he will get also the first 3 items*/
+        /*
+         multicast().onBackpressureBuffer() is caching all the items until the first subscriber, so here sam as first subscriber even
+         if he subscribes after 3 items, he will get also the first 3 items
+         */
         flux.subscribe(Util.subscriber("bob"));
         sink.tryEmitNext("hi");
         flux.subscribe(Util.subscriber("john"));

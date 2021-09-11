@@ -11,14 +11,14 @@ public class Lec03FluxFromArrayOrList {
     public static void main(String[] args) {
 
         //from list
-        List<String> strings = Arrays.asList("a","b","c");
+        List<String> strings = Arrays.asList("a", "b", "c");
         Flux.fromIterable(strings)
                 .subscribe(Util.onNext(),
                         Util.onError(),
                         Util.onComplete());
         System.out.println("##############");
         //from Array
-        Integer[] arr = {2,3,4,5};
+        Integer[] arr = {2, 3, 4, 5};
         Flux.fromArray(arr)
                 .subscribe(Util.onNext(),
                         Util.onError(),

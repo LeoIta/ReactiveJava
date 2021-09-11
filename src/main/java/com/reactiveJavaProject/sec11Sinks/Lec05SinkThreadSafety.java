@@ -32,7 +32,7 @@ public class Lec05SinkThreadSafety {
             });
         }
 
-        this loop is not threads safe as we have different result every run. we should use the sink.emitNext with EmitFailureHandler
+        this loop is not threads safe as we have different results every run. we should use the sink.emitNext with EmitFailureHandler
         */
 
         for (int i = 0; i < 1000; i++) {

@@ -22,10 +22,10 @@ public class Lec10Transform {
                 .map(i -> new Person());
     }
 
-    public static Function<Flux<Person>,Flux<Person>> applyFilterMap(){
+    public static Function<Flux<Person>, Flux<Person>> applyFilterMap() {
         return flux -> flux
-                .filter(p -> p.getAge()>18)
+                .filter(p -> p.getAge() > 18)
                 .doOnNext(p -> p.setName((p.getName().toUpperCase())))
-                .doOnDiscard(Person.class, p-> System.out.println("Not allowing : " + p));
+                .doOnDiscard(Person.class, p -> System.out.println("Not allowing : " + p));
     }
 }

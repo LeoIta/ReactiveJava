@@ -6,7 +6,7 @@ import java.time.Duration;
 
 public class OrderService {
 
-    /*every 100 millisecond generate a new random item using PurchaseOrder*/
+    /*every 100 millisecond it generates a new random item using PurchaseOrder*/
     public static Flux<PurchaseOrder> getOrderStream() {
 
         return Flux.interval(Duration.ofMillis(100))

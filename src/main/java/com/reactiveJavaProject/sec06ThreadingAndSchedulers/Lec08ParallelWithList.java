@@ -11,9 +11,11 @@ public class Lec08ParallelWithList {
 
     public static void main(String[] args) {
 
-        //Array list is not threads safe
-        /*size will often be different from 10, publisher is not responsible
-        for multi threads safety*/
+        /*
+        N.B. ArrayList is not threads safe
+        the returned size will be often different from 10, as publisher is not responsible
+        for multi threads safety
+        */
         List<Integer> list = new ArrayList<>();
 
         Flux.range(1, 10)

@@ -6,7 +6,7 @@ import org.reactivestreams.Subscriber;
 import java.util.function.Consumer;
 
 public class Util {
-    public static final Faker FAKER = Faker.instance(); //is simulating a database instance
+    public static final Faker FAKER = Faker.instance(); //it simulate a database instance
 
     public static Consumer<Object> onNext() {
         return o -> System.out.println("Received : " + o);

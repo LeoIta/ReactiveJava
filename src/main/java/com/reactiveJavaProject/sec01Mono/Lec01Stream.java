@@ -14,7 +14,7 @@ public class Lec01Stream {
                     return i * 2;
                 });
 
-        System.out.println(stream); // lazy stream wil not print 1 as the stream content but the object ----->java.util.stream.ReferencePipeline$Head@36d64342
+        System.out.println(stream); // lazy stream will not print 1 as the stream content but the object ----->java.util.stream.ReferencePipeline$Head@36d64342
         stream.forEach(System.out::println);// we have to specify that has to print the content -----> 2
     }
 

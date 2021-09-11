@@ -20,7 +20,6 @@ public class Lec02FluxCreateRefactoring {
         }
 
         Util.sleepSeconds(2);
-
     }
 
 }

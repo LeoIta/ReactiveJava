@@ -21,9 +21,10 @@ public class Lec06BufferWithSize {
                 /* adding a value in  .onBackpressureBuffer(70) will increase the number of kept values*/
 //                .onBackpressureBuffer(70)
 
-                /* using consumer argument we can print with .onBackpressureBuffer(maxSize, Consumer)
-                 the dropped value that is generate even if the !fluxSink.isCancelled() should not allow
-                 it will throw an error eventually*/
+                /*
+                using consumer argument we can print with .onBackpressureBuffer(maxSize, Consumer)
+                the dropped value that is generate, even if the !fluxSink.isCancelled() should not allow it
+                It will throw an error eventually */
 
                 .onBackpressureBuffer(70, o -> System.out.println("Dropped : " + o))
                 .publishOn(Schedulers.boundedElastic())

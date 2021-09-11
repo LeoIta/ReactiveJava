@@ -12,11 +12,11 @@ public class Lec07Timeout {
         getOrderNumbers()
                 .log()
 //                .timeout(Duration.ofSeconds(2))
-                /* after 2 sec if no value is produced then will return error:
+                /* after 2 sec if no item is emitted it will return error:
             ERROR : Did not observe any item or terminal signal within 2000ms in 'concatMap' (and no fallback has been configured)
                 */
                 .timeout(Duration.ofSeconds(2), fallback())
-                /* after 2 sec if no value is produced then will call the fallback */
+                /* after 2 sec if no item is emitted it will call the fallback */
                 .subscribe(Util.subscriber());
 
         Util.sleepSeconds(10);

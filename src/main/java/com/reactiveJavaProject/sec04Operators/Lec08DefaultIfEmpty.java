@@ -7,7 +7,7 @@ public class Lec08DefaultIfEmpty {
 
     public static void main(String[] args) {
 
-        //if no value passes the filter, we have empty object then the .defaultIfEmpty will provide a constant value
+        //if no item passes the filter, we have empty object then the .defaultIfEmpty will provide a constant value
         get10OrderNumber()
                 .filter(i -> i > 10)
                 .defaultIfEmpty(-100)
@@ -15,7 +15,7 @@ public class Lec08DefaultIfEmpty {
 
         System.out.println("##############");
 
-        //if any value passes the filter, we have not empty object, then the .defaultIfEmpty will not be called
+        //if any item passes the filter, we have not empty object, then the .defaultIfEmpty will not be called
         get12OrderNumber()
                 .filter(i -> i > 10)
                 .defaultIfEmpty(-100)

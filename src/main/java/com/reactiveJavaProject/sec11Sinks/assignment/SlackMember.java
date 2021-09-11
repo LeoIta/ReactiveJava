@@ -15,11 +15,11 @@ public class SlackMember {
         return name;
     }
 
-    void receives(String message){
+    void receives(String message) {
         System.out.println(message);
     }
 
-    public void says(String message){
+    public void says(String message) {
         this.messageConsumer.accept(message);
     }
 

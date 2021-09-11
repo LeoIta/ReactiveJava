@@ -19,5 +19,4 @@ public class NameProducer implements Consumer<FluxSink<String>> {
         String thread = Thread.currentThread().getName();
         this.fluxSink.next(thread + " : " + name);
     }
-
 }

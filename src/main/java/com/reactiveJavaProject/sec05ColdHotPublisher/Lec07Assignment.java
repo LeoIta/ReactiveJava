@@ -16,13 +16,23 @@ public class Lec07Assignment {
         InventoryService inventoryService = new InventoryService();
 
         // revenue and inventory observe the order stream
-        orderService.orderStream().log().subscribe(revenueService.subscribeOrderStream());
-        orderService.orderStream().subscribe(inventoryService.subscribeOrderStream());
+        orderService
+                .orderStream()
+                .log()
+                .subscribe(revenueService.subscribeOrderStream());
 
-        inventoryService.inventoryStream().log()
+        orderService
+                .orderStream()
+                .subscribe(inventoryService.subscribeOrderStream());
+
+        inventoryService
+                .inventoryStream()
+                .log()
                 .subscribe(Util.subscriber("inventory"));
 
-        revenueService.revenueStream().log()
+        revenueService
+                .revenueStream()
+                .log()
                 .subscribe(Util.subscriber("revenue"));
 
         Util.sleepSeconds(10);

@@ -7,8 +7,11 @@ import reactor.util.context.Context;
 
 public class Lec03CtxRateLimiterDemo {
     public static void main(String[] args) {
-/*implement a book service that will provide amount a books based on the user name
- that is connected with the user profile standard or prime */
+
+        /*
+        implement a book service that will provide amount a books based on the user name
+        that is connected with the user profile standard or prime
+        */
 
         BookService.getBook()
                 .repeat(3)
@@ -71,6 +74,6 @@ public class Lec03CtxRateLimiterDemo {
     Received : <Random book1>
     Received : <Random book2>
     ERROR    : "not allowed"
-
 */
+
 }

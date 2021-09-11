@@ -9,7 +9,7 @@ public class Lec05FluxGenerate {
 
         Flux.generate(synchronousSink -> {
             System.out.println("emitting");
-            synchronousSink.next(Util.faker().country().name()); //1
+            synchronousSink.next(Util.faker().country().name()); //first call
 // synchronousSink.next(Util.faker().country().name());
 // cannot be called twice as this generate a new object with a single output
         })
